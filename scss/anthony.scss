@@ -1,0 +1,148 @@
+$imgpath: "../img/";
+$footh: 74;
+
+$bg: #f8f8f8;
+$copy: #7f7f7f;
+$border: #c5c5c5;
+$hover: #d6ff28;
+$active: #0affe2;
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	font: 15px "camingodos-web", sans-serif;
+	text-align: center;
+	background-color: $bg;
+	color: $copy;
+}
+
+
+header {
+	padding: 40px 0;
+	h1.title {
+		margin: 0;
+		font-family: "futura-pt", sans-serif;
+		text-transform: uppercase;
+		font-size: 1.4rem;
+		&, span {
+			line-height: 1em;
+		}
+		.first {
+			font-weight: 300;
+		}
+		.last {
+			font-weight: 700;
+		}
+	}
+}
+
+.main-container {
+	min-height: 100%;
+	margin-bottom: -#{$footh}px;
+	padding-bottom: $footh + 40px;
+	&:after {
+		content: "";
+		display: block;
+	}
+	a {
+		display: block;
+		text-decoration: none;
+		border: solid 1px $border;
+		width: 100%;
+		max-width: 380px;
+		padding: 15px 0;
+		margin: 0 auto;
+		color: inherit;
+		& + a {
+			margin-top: 25px;
+		}
+		&:hover {
+			background-color: $hover;
+		}
+		&:active {
+			background-color: $active;
+		}
+		span {
+			display: block;
+			&:first-child {
+				font-size: 1rem;
+				font-weight: 400;
+			}
+			& + span {
+				font-weight: 200;
+				font-size: 0.9rem;
+			}
+		}
+	}
+}
+
+.footer-container {
+	height: #{$footh}px; 
+}
+
+
+.footer-container {
+	padding: 0 0 30px 0;
+	footer {
+		padding: 0;
+		font-size: 0;
+		a {
+			display: inline-block;
+			width: 34px;
+			height: 34px;
+			background-position: center bottom;
+			vertical-align: middle;
+			&:hover {
+				background-position: center top;
+			}
+			& + a {
+				margin-left: 12px;
+			}
+		}
+		#instagram {
+			background-image: url(#{$imgpath}instagram.png);
+		}
+		#twitter {
+			background-image: url(#{$imgpath}twitter.png);
+		}
+		#linkedin {
+			background-image: url(#{$imgpath}linkedin.png);
+		}
+	}
+}
+
+@media only screen and (min-width: 480px) {
+	header {
+		h1.title {
+			font-size: 2rem;
+			letter-spacing: -1px;
+		}
+	}
+	.main-container {
+		a {
+			span {
+				&:first-child {
+					font-size: 1.3rem;
+				}
+				& + span {
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+
+}
+
+@media only screen and (min-width: 600px) {
+	header {
+		h1.title {
+			font-size: 2.66rem;
+		}
+	}
+}
