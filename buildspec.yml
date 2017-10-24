@@ -11,7 +11,8 @@ phases:
       - npx postcss css/style.css -o css/style.css --use autoprefixer --no-map
   post_build:
     commands:
-      - aws s3 sync . s3://anthonyschwartzman.com --delete --exclude "scss/*" --exclude "buildspec.yml" --exclude ".gitignore"
+      - echo scss buildspec.yml .gitignore LICENSE | xargs rm -r
+      - aws s3 sync . s3://anthonyschwartzman.com --delete
       - echo Build completed on `date`
 artifacts:
   files:
